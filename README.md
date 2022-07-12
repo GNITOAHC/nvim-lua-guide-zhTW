@@ -56,7 +56,7 @@ A few tutorials have already been written to help people write plugins in Lua. S
 - [nlua.nvim](https://github.com/tjdevries/nlua.nvim) - Lua Development for Neovim
 - [BetterLua.vim](https://github.com/euclidianAce/BetterLua.vim) - Better Lua syntax highlighting in Vim/NeoVim
 
-## Where to put Lua files
+## Lua文件要放在何處
 
 ### init.lua
 
