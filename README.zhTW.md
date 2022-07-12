@@ -10,9 +10,10 @@ This guide assumes you are using at least version 0.5 of Neovim.
 ### Learning Lua
 
 If you are not already familiar with the language, there are plenty of resources to get started:
+如果你對於Lua還不熟，以下是許多學習資源：
 
-- The [Learn X in Y minutes page about Lua](https://learnxinyminutes.com/docs/lua/) should give you a quick overview of the basics
-- [This guide](https://github.com/medwatt/Notes/blob/main/Lua/Lua_Quick_Guide.ipynb) is also a good resource for getting started quickly
+- [Learn X in Y minutes page about Lua](https://learnxinyminutes.com/docs/lua/) 可以給你Lua的快速基本概要
+- [這個簡章](https://github.com/medwatt/Notes/blob/main/Lua/Lua_Quick_Guide.ipynb) 也可以給你基本觀念
 - If videos are more to your liking, Derek Banas has a [1-hour tutorial on the language](https://www.youtube.com/watch?v=iMacxZQMPXs)
 - Want something a little more interactive with runnable examples? Try [the LuaScript tutorial](https://www.luascript.dev/learn)
 - The [lua-users wiki](http://lua-users.org/wiki/LuaDirectory) is full of useful information on all kinds of Lua-related topics
