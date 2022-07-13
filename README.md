@@ -56,13 +56,13 @@ A few tutorials have already been written to help people write plugins in Lua. S
 - [nlua.nvim](https://github.com/tjdevries/nlua.nvim) - Lua Development for Neovim
 - [BetterLua.vim](https://github.com/euclidianAce/BetterLua.vim) - Better Lua syntax highlighting in Vim/NeoVim
 
-## Lua文件要放在何處
+## Lua文件位置
 
 ### init.lua
 
-Neovim supports loading an `init.lua` file for configuration instead of the usual `init.vim`.
+Neovim 支援加載配置 `init.lua` 的文件，而非一般常用的 `init.vim` 文件。
 
-Note: `init.lua` is of course _completely_ optional. Support for `init.vim` is not going away and is still a valid option for configuration. Do keep in mind that some features are not 100% exposed to Lua yet.
+注意: `init.lua` 是 _可自由選擇的_ ，並非是強制的。Neovim 仍然支援加載配置 `init.vim` 的文件。 但請記住，Neovim 的一些功能尚未 100% 地開放給 Lua 使用
 
 See also:
 - [`:help config`](https://neovim.io/doc/user/starting.html#config)
