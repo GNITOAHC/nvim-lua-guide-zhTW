@@ -64,14 +64,14 @@ Neovim 支援加載配置 `init.lua` 的文件，而非一般常用的 `init.vim
 
 注意: `init.lua` 是 _可自由選擇的_ ，並非是強制的。Neovim 仍然支援加載配置 `init.vim` 的文件。 但請記住，Neovim 的一些功能尚未 100% 地開放給 Lua 使用
 
-See also:
+另請參見:
 - [`:help config`](https://neovim.io/doc/user/starting.html#config)
 
-### Modules
+### 模組
 
-Lua modules are found inside a `lua/` folder in your `'runtimepath'` (for most users, this will mean `~/.config/nvim/lua` on \*nix systems and `~/AppData/Local/nvim/lua` on Windows). You can `require()` files in this folder as Lua modules.
+Lua 模組通常會出現在您的 `'runtimepath'` 中的 `lua/` 資料夾中(對於大多數的使用者而言，在 \*nix 作業系統上為 `~/.config/nvim/lua` ，而在 Windows 作業系統上則為 `~/AppData/Local/nvim/lua` )。因此，您可以 `require()` 此資料夾中的檔案作為 Lua 模組。
 
-Let's take the following folder structure as an example:
+我們以下面的資料夾架構為例:
 
 ```text
 📂 ~/.config/nvim
