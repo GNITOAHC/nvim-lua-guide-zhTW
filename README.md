@@ -88,15 +88,15 @@ Lua 模組通常會出現在您的 `'runtimepath'` 中的 `lua/` 資料夾中(�
 └── 🇻 init.vim
 ```
 
-The following Lua code will load `myluamodule.lua`:
+以下的 Lua 代碼將會加載 `myluamodule.lua`
 
 ```lua
 require('myluamodule')
 ```
 
-Notice the absence of a `.lua` extension.
+注意沒有 `.lua` 的副檔名
 
-Similarly, loading `other_modules/anothermodule.lua` is done like so:
+同樣地，加載 `other_modules/anothermodule.lua` 的過程如下:
 
 ```lua
 require('other_modules.anothermodule')
