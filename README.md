@@ -104,9 +104,9 @@ require('other_modules.anothermodule')
 require('other_modules/anothermodule')
 ```
 
-Path separators are denoted by either a dot `.` or a slash `/`.
+路徑分隔符可使用點 `.` 或著斜線 `/` 表示，以分隔路徑。
 
-A folder containing an `init.lua` file can be required directly, without having to specify the name of the file.
+若是檔案夾中包含 `init.lua` 檔案，則不需要指定該檔案名稱，可以直接引用該檔案夾
 
 ```lua
 require('other_modules') -- loads other_modules/init.lua
