@@ -112,8 +112,8 @@ require('other_modules/anothermodule')
 require('other_modules') -- loads other_modules/init.lua
 ```
 
-Requiring a nonexistent module or a module which contains syntax errors aborts the currently executing script.
-`pcall()` may be used to prevent errors.
+加載一個不存在或是有語法錯誤的模組會直接中止目前正在執行的程式。
+而 `pcall()` 函式可以用來避免這類錯誤。 
 
 ```lua
 local ok, _ = pcall(require, 'module_with_error')
@@ -122,10 +122,10 @@ if not ok then
 end
 ```
 
-See also:
+另請參見:
 - [`:help lua-require`](https://neovim.io/doc/user/lua.html#lua-require)
 
-#### Tips
+#### 提醒事項
 
 Several Lua plugins might have identical filenames in their `lua/` folder. This could lead to namespace clashes.
 
