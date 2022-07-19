@@ -127,7 +127,7 @@ end
 
 #### 提醒事項
 
-Several Lua plugins might have identical filenames in their `lua/` folder. This could lead to namespace clashes.
+許多 Lua 插件或外掛在它們的 `lua/` 檔案夾中可能會有相同的檔案名稱，這可能會導致命名空間衝突
 
 If two different plugins have a `lua/main.lua` file, then doing `require('main')` is ambiguous: which file do we want to source?
 
