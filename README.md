@@ -125,17 +125,17 @@ end
 另請參見:
 - [`:help lua-require`](https://neovim.io/doc/user/lua.html#lua-require)
 
-#### 提醒事項
+#### 小提醒
 
 許多 Lua 插件或外掛在它們的 `lua/` 檔案夾中可能會有相同的檔案名稱，這可能會導致命名空間衝突
 
-If two different plugins have a `lua/main.lua` file, then doing `require('main')` is ambiguous: which file do we want to source?
+若是兩個不同的插件皆有一個 `lua/main.lua` 檔案，那麼執行 `require('main')` 是不明確的 : 我們是要加載哪個檔案?
 
-It might be a good idea to namespace your config or your plugin with a top-level folder, like so: `lua/plugin_name/main.lua`
+我們最好將自己的配置檔或插件命名為頂級檔案夾，以如下的形式: `lua/plugin_name/main.lua`
 
-### Runtime files
+### 執行中檔案
 
-Much like Vimscript files, Lua files can be loaded automatically from special folders in your `runtimepath`. Currently, the following folders are supported:
+和 Vimscript 檔案類似, 位於 `runtimepath` 中一些特殊目錄中的 Lua 檔案是可以被 Neovim 自動加載的. 目前有以下這些特殊目錄可支援使用此功能。
 
 - `colors/`
 - `compiler/`
