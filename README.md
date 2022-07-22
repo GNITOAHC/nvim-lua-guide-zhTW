@@ -440,7 +440,7 @@ Alternatively, you can use the `:lua` command to pretty-print a Lua expression b
 
 Additionally, you may find that built-in Lua functions are sometimes lacking compared to what you would find in other languages (for example `os.clock()` only returns a value in seconds, not milliseconds). Be sure to look at the Neovim stdlib (and `vim.fn`, more on that later), it probably has what you're looking for.
 
-## Using Vimscript from Lua
+## 在 Lua 中使用 Vimscript
 
 ### vim.api.nvim_eval()
 
