@@ -145,15 +145,15 @@ end
 - `plugin/`
 - `syntax/`
 
-Note: in a runtime directory, all `*.vim` files are sourced before `*.lua` files.
+注意: 在同一個執行目錄中, 所有的 `*.vim` 檔案會優先於 `*.lua` 檔案。
 
-See also:
+另請參見:
 - [`:help 'runtimepath'`](https://neovim.io/doc/user/options.html#'runtimepath')
 - [`:help load-plugins`](https://neovim.io/doc/user/starting.html#load-plugins)
 
-#### Tips
+#### 小提醒
 
-Since runtime files aren't based on the Lua module system, two plugins can have a `plugin/main.lua` file without it being an issue.
+由於執行中的檔案並不是基於 Lua 模組系統，因此兩個不同的插件都可以擁有 `plugin/main.lua` 檔案，不會產生任何問題。
 
 ## Using Lua from Vimscript
 
