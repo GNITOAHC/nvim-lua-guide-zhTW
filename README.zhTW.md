@@ -9,7 +9,6 @@
 - [:brazil: Portuguese version](https://github.com/npxbr/nvim-lua-guide/blob/master/README.pt-br.md)
 - [:jp: Japanese version](https://github.com/willelz/nvim-lua-guide-ja/blob/master/README.ja.md)
 - [:ru: Russian version](https://github.com/kuator/nvim-lua-guide-ru)
-- [🇺🇦 Ukrainian version](https://github.com/famiclone/nvim-lua-guide-ua)
 
 ## Introduction
 
@@ -57,22 +56,22 @@ A few tutorials have already been written to help people write plugins in Lua. S
 - [nlua.nvim](https://github.com/tjdevries/nlua.nvim) - Lua Development for Neovim
 - [BetterLua.vim](https://github.com/euclidianAce/BetterLua.vim) - Better Lua syntax highlighting in Vim/NeoVim
 
-## Lua文件位置
+## Where to put Lua files
 
 ### init.lua
 
-Neovim 支援加載配置 `init.lua` 的文件，而非一般常用的 `init.vim` 文件。
+Neovim supports loading an `init.lua` file for configuration instead of the usual `init.vim`.
 
-注意: `init.lua` 是 _可自由選擇的_ ，並非是強制的。Neovim 仍然支援加載配置 `init.vim` 的文件。 但請記住，Neovim 的一些功能尚未 100% 地開放給 Lua 使用
+Note: `init.lua` is of course _completely_ optional. Support for `init.vim` is not going away and is still a valid option for configuration. Do keep in mind that some features are not 100% exposed to Lua yet.
 
-另請參見:
+See also:
 - [`:help config`](https://neovim.io/doc/user/starting.html#config)
 
-### 模組
+### Modules
 
-Lua 模組通常會出現在您的 `'runtimepath'` 中的 `lua/` 資料夾中(對於大多數的使用者而言，在 \*nix 作業系統上為 `~/.config/nvim/lua` ，而在 Windows 作業系統上則為 `~/AppData/Local/nvim/lua` )。因此，您可以 `require()` 此資料夾中的檔案作為 Lua 模組。
+Lua modules are found inside a `lua/` folder in your `'runtimepath'` (for most users, this will mean `~/.config/nvim/lua` on \*nix systems and `~/AppData/Local/nvim/lua` on Windows). You can `require()` files in this folder as Lua modules.
 
-我們以下面的資料夾架構為例:
+Let's take the following folder structure as an example:
 
 ```text
 📂 ~/.config/nvim
@@ -89,15 +88,15 @@ Lua 模組通常會出現在您的 `'runtimepath'` 中的 `lua/` 資料夾中(�
 └── 🇻 init.vim
 ```
 
-以下的 Lua 代碼將會加載 `myluamodule.lua`
+The following Lua code will load `myluamodule.lua`:
 
 ```lua
 require('myluamodule')
 ```
 
-注意沒有 `.lua` 的副檔名
+Notice the absence of a `.lua` extension.
 
-同樣地，加載 `other_modules/anothermodule.lua` 的過程如下:
+Similarly, loading `other_modules/anothermodule.lua` is done like so:
 
 ```lua
 require('other_modules.anothermodule')
@@ -105,16 +104,16 @@ require('other_modules.anothermodule')
 require('other_modules/anothermodule')
 ```
 
-路徑分隔符可使用點 `.` 或著斜線 `/` 表示，以分隔路徑。
+Path separators are denoted by either a dot `.` or a slash `/`.
 
-若是檔案夾中包含 `init.lua` 檔案，則不需要指定該檔案名稱，可以直接引用該檔案夾
+A folder containing an `init.lua` file can be required directly, without having to specify the name of the file.
 
 ```lua
 require('other_modules') -- loads other_modules/init.lua
 ```
 
-加載一個不存在或是有語法錯誤的模組會直接中止目前正在執行的程式。
-而 `pcall()` 函式可以用來避免這類錯誤。 
+Requiring a nonexistent module or a module which contains syntax errors aborts the currently executing script.
+`pcall()` may be used to prevent errors.
 
 ```lua
 local ok, _ = pcall(require, 'module_with_error')
@@ -123,20 +122,20 @@ if not ok then
 end
 ```
 
-另請參見:
+See also:
 - [`:help lua-require`](https://neovim.io/doc/user/lua.html#lua-require)
 
-#### 小提醒
+#### Tips
 
-許多 Lua 插件或外掛在它們的 `lua/` 檔案夾中可能會有相同的檔案名稱，這可能會導致命名空間衝突
+Several Lua plugins might have identical filenames in their `lua/` folder. This could lead to namespace clashes.
 
-若是兩個不同的插件皆有一個 `lua/main.lua` 檔案，那麼執行 `require('main')` 是不明確的 : 我們是要加載哪個檔案?
+If two different plugins have a `lua/main.lua` file, then doing `require('main')` is ambiguous: which file do we want to source?
 
-我們最好將自己的配置檔或插件命名為頂級檔案夾，以如下的形式: `lua/plugin_name/main.lua`
+It might be a good idea to namespace your config or your plugin with a top-level folder, like so: `lua/plugin_name/main.lua`
 
-### 執行中檔案
+### Runtime files
 
-和 Vimscript 檔案類似, 位於 `runtimepath` 中一些特殊目錄中的 Lua 檔案是可以被 Neovim 自動加載的. 目前有以下這些特殊目錄可支援使用此功能。
+Much like Vimscript files, Lua files can be loaded automatically from special folders in your `runtimepath`. Currently, the following folders are supported:
 
 - `colors/`
 - `compiler/`
@@ -146,15 +145,15 @@ end
 - `plugin/`
 - `syntax/`
 
-注意: 在同一個執行目錄中, 所有的 `*.vim` 檔案會優先於 `*.lua` 檔案。
+Note: in a runtime directory, all `*.vim` files are sourced before `*.lua` files.
 
-另請參見:
+See also:
 - [`:help 'runtimepath'`](https://neovim.io/doc/user/options.html#'runtimepath')
 - [`:help load-plugins`](https://neovim.io/doc/user/starting.html#load-plugins)
 
-#### 小提醒
+#### Tips
 
-由於執行中的檔案並不是基於 Lua 模組系統，因此兩個不同的插件都可以擁有 `plugin/main.lua` 檔案，不會產生任何問題。
+Since runtime files aren't based on the Lua module system, two plugins can have a `plugin/main.lua` file without it being an issue.
 
 ## Using Lua from Vimscript
 
@@ -441,7 +440,7 @@ Alternatively, you can use the `:lua` command to pretty-print a Lua expression b
 
 Additionally, you may find that built-in Lua functions are sometimes lacking compared to what you would find in other languages (for example `os.clock()` only returns a value in seconds, not milliseconds). Be sure to look at the Neovim stdlib (and `vim.fn`, more on that later), it probably has what you're looking for.
 
-## 在 Lua 中使用 Vimscript
+## Using Vimscript from Lua
 
 ### vim.api.nvim_eval()
 
